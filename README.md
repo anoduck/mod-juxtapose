@@ -14,17 +14,17 @@
     <a href="https://gethinode.com" alt="Hinode theme">
         <img src="https://img.shields.io/badge/theme-hinode-blue">
     </a>
-    <a href="https://github.com/gethinode/mod-template/commits/main" alt="Last commit">
-        <img src="https://img.shields.io/github/last-commit/gethinode/mod-template.svg">
+    <a href="https://github.com/anoduck/mod-juxtapose/commits/main" alt="Last commit">
+        <img src="https://img.shields.io/github/last-commit/anoduck/mod-juxtapose.svg">
     </a>
-    <a href="https://github.com/gethinode/mod-template/issues" alt="Issues">
-        <img src="https://img.shields.io/github/issues/gethinode/mod-template.svg">
+    <a href="https://github.com/anoduck/mod-juxtapose/issues" alt="Issues">
+        <img src="https://img.shields.io/github/issues/anoduck/mod-juxtapose.svg">
     </a>
-    <a href="https://github.com/gethinode/mod-template/pulls" alt="Pulls">
-        <img src="https://img.shields.io/github/issues-pr-raw/gethinode/mod-template.svg">
+    <a href="https://github.com/anoduck/mod-juxtapose/pulls" alt="Pulls">
+        <img src="https://img.shields.io/github/issues-pr-raw/anoduck/mod-juxtapose.svg">
     </a>
-    <a href="https://github.com/gethinode/mod-template/blob/main/LICENSE" alt="License">
-        <img src="https://img.shields.io/github/license/gethinode/mod-template">
+    <a href="https://github.com/anoduck/mod-juxtapose/blob/main/LICENSE" alt="License">
+        <img src="https://img.shields.io/github/license/anoduck/mod-juxtapose">
     </a>
 </p>
 
@@ -32,18 +32,37 @@
 
 ![Logo](https://raw.githubusercontent.com/gethinode/hinode/main/static/img/logo.png)
 
-Hinode is a clean blog theme for [Hugo][hugo], an open-source static site generator. Hinode is available as a [template][repository_template], and a [main theme][repository]. <!-- This repository maintains a Hugo module to add [module][module] to a Hinode site. --> Visit the Hinode documentation site for [installation instructions][hinode_docs].
+Hinode is a clean blog theme for [Hugo][hugo], an open-source static site generator. Hinode is available as a
+[template][repository_template], and a [main theme][repository]. <!-- This repository maintains a Hugo module to add
+[module][module] to a Hinode site. --> Visit the Hinode documentation site for [installation instructions][hinode_docs]. 
 
 ## Contributing
 
-This module uses [semantic-release][semantic-release] to automate the release of new versions. The package uses `husky` and `commitlint` to ensure commit messages adhere to the [Conventional Commits][conventionalcommits] specification. You can run `npx git-cz` from the terminal to help prepare the commit message.
+This module uses [semantic-release][semantic-release] to automate the release of new versions. The package uses `husky`
+and `commitlint` to ensure commit messages adhere to the [Conventional Commits][conventionalcommits] specification. You
+can run `npx git-cz` from the terminal to help prepare the commit message.
 
-<!-- ## Configuration
+## Usage
+
+Usage of this module is embodied through the employment of a shortcode. Unfortunately for yours truly, juxtapose
+provides many customizable parameters, which users will appreciate.
+
+It has the following paramters:
+
+| Parameter | Default   | Description                                                    | Required | Example               |
+|-----------|-----------|----------------------------------------------------------------|----------|-----------------------|
+| blockID   | juxtapose | Id given to the "div" element containing the juxtapose feature | Yes      | blockID="my_pictures" |
+|           |           |                                                                |          |                       |
+|           |           |                                                                |          |                       |
+|           |           |                                                                |          |                       |
+|           |           |                                                                |          |                       |
+
+## Configuration
 
 This module supports the following parameters (see the section `params.modules` in `config.toml`):
 
 | Setting                   | Default | Description |
-|---------------------------|---------|-------------| -->
+|---------------------------|---------|-------------|
 
 <!-- MARKDOWN LINKS -->
 [hugo]: https://gohugo.io

@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "juxtapose.schema.json",
+    "title": "juxtapose",
+    "description": "Schema for KnightLab's JuxtaposeJs YAML data file.",
+    "lastModified": "2025-02-03T08:00:22-05:00",
+    "type": "object",
+    "properties": {
+        "frames": {
+            "description": "Two images used for comparison",
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "properties": {
+                "image": {
+                    "description": "Image Object.",
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "description": "Url of photo to juxtapose",
+                            "type": "string"
+                        },
+                        "label": {
+                            "description": "Label for image to juxtapose",
+                            "type": "string"
+                        },
+                        "credit": {
+                            "description": "Credit for image to juxtapose.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [ "src" ]
+                }
+            },
+            "required": [ "image" ]
+        },
+        "animate": {
+            "description": "Whether or not to animate the juxtapose view.",
+            "type": "boolean",
+            "default": true
+        },
+        "showLabels": {
+            "description": "Whether or not to show image labels.",
+            "type": "boolean",
+            "default": true
+        },
+        "showCredits": {
+            "description": "Whether or not to show image credits.",
+            "type": "boolean",
+            "default": true
+        },
+        "startingPosition": {
+            "description": "Slider starting percentage position.",
+            "type": "string",
+            "default": "50%"
+        },
+        "makeResponsive": {
+            "description": "Is the juxtapose element to be responsive?",
+            "type": "boolean",
+            "default": "true"
+        }
+    },
+    "required": [ "frames" ]
+}
