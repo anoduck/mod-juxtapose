@@ -1,6 +1,6 @@
 {
   "name": "@anoduck/mod-juxtapose",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A template to define a Hugo module compatible with Hinode",
   "keywords": [
     "hugo",
