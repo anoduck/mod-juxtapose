@@ -2,9 +2,6 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Test site for mod-juxtapose'
 
-[main]
-  enableDarkMode = true
-
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -18,6 +15,3 @@ block = true
 
   [[module.imports]]
     path = "github.com/anoduck/mod-juxtapose"
-  [[module.imports.mounts]]
-    source = "layouts"
-    target = "layouts"

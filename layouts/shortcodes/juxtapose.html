@@ -16,7 +16,7 @@
 {{- $error := false -}}
 
 <!-- Initialize arguments -->
-{{- $blockid := "" -}}
+{{- $dataFile := "" -}}
 {{- $frames := "" -}}
 {{- $images := "" -}}
 {{- $animate := "" -}}
@@ -24,40 +24,21 @@
 {{- $creditsOn := "" -}}
 {{- $startPos := "" -}}
 {{- $resp := "" -}}
-{{- $debug := "" -}}
-
-<!-- Set debug -->
-{{- if .Site.Params.modules.juxtapose.debug }}
-    {{- $debug = true -}}
-{{ end }}
 
 <!-- Define Variables -->
-{{- if .IsNamedParams }}
-  {{- $blockid = .Get "blockid" -}}
-{{ else }}
-  {{- $blockid = .Get 0 -}}
-{{ end }}
-{{- $dataFile = .Site.Data $blockid -}}
+{{- $dataFile = .Site.Data.juxtapose -}}
 {{- $frames = index $dataFile "frames" -}}
-{{- $animate = $dataFile.animate -}}
-{{- $labelsOn = $dataFile.showLabels -}}
-{{- $creditsOn = $dataFile.showCredits -}}
-{{- $startPos = $dataFile.startingPosition -}}
-{{- $resp = $dataFile.makeResponsive -}}
-
-{{- if $debug }}
-  <p>Debug is on.</p>
-{{ end }}
-
+{{- $animate = $dataFile.animate | default true -}}
+{{- $labelsOn = $dataFile.showLabels | default true -}}
+{{- $creditsOn = $dataFile.showCredits | default true -}}
+{{- $startPos = $dataFile.startingPosition | default "50%" -}}
+{{- $resp = $dataFile.makeResponsive | default true -}}
 
 <!-- HTML Template -->
-{{ with $blockid }}
-<div id="{{ . | safeHTML }}">
-{{ end }}
+<div id="juxtapose"></div>
 <script>
-{{ with $blockid }}
-  slider = new juxtapose.JXSlider({{ . | safeJSStr }},
-{{ end }}
+document.addEventListener('DOMContentLoaded', function() {
+  slider = new juxtapose.JXSlider("#juxtapose",
     [
       {{- range $frames }}
         {
@@ -77,26 +58,5 @@
         startingPosition: {{ $startPos | safeJSStr }},
         makeResponsive: {{ $resp }}
     });
+});
 </script>
-
-<!-- Provide debug information -->
-{{- if $debug }}
-<div>
-  <pre>
-  Debugging Info:
-  ===============
-
-    Rendering info
-    --------------
-
-    Placing debug information right here.
-
-    {{/* - Original Content Entry = {{ $context }}
-    - Content Entry with Safe Html = {{ $context | safeHTML }}
-    - Rendered content with Page.RenderString = {{ $context | strings.TrimSpace | .Page.RenderString }}
-    - Button Label = {{ $btnlabel }}
-    - Title = {{ $title }} */}}
-  
-  </pre>
-</div>
-{{ end }}

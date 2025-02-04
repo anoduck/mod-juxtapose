@@ -7,17 +7,11 @@
     min = "0.110.0"
     max = ""
   [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
     source = 'layouts'
     target = 'layouts'
   [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
     source = "dist/scss"
-    target = "assets/scss/modules/juxtapose"
+    target = "assets/scss"
   [[module.mounts]]
     source = "dist/js"
     target = "assets/js/modules/juxtapose"
@@ -25,7 +19,6 @@
 
 [params.modules.juxtapose]
   integration = "optional"
-  debug = true
 
 [params.modules.juxtapose.csp]
   [modules.juxtapose.csp]
