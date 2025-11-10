@@ -50,7 +50,7 @@
     "husky": "^9.1.7",
     "juxtaposejs": "^1.1.6",
     "rimraf": "^6.1.0",
-    "semantic-release": "^25.0.1"
+    "semantic-release": "^25.0.2"
   },
   "hugo-bin": {
     "buildTags": "extended"
